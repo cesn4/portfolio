@@ -60,7 +60,11 @@
   "dependencies": {
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
+    "@types/terminal-kit": "^1.28.1",
+    "install": "^0.13.0",
+    "npm": "^6.14.2",
     "react": "^16.13.0",
-    "react-dom": "^16.13.0"
+    "react-dom": "^16.13.0",
+    "terminal-in-react": "^4.3.1"
   }
 }
