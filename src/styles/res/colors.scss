@@ -1,0 +1,19 @@
+$color-white: #FBFBFB;
+$color-dark-gray: #A5A5A5;
+$color-black: #000000;
+$color-black-shade: #0C0C0C;
+$color-cinnabar: #E13131;
+$color-de-york: #7DCE82;
+
+$theme-colors: (
+    accent: $color-black-shade,
+    active: $color-white,
+    inactive: $color-dark-gray,
+    positive: $color-de-york,
+    negative: $color-cinnabar,
+    black: $color-black,
+);
+
+@function theme-color($_key) {
+    @return map-get($theme-colors, $_key)
+}

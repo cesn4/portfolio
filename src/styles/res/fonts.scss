@@ -1,0 +1,17 @@
+$font-family-primary: 'Power Clear';
+$font-family-secondary: 'SimSun-ExtB';
+
+@function px-to-rem($_size) {
+    $rem-size: $_size / 16px;
+    @return #{$rem-size}rem;
+}
+
+$font-size-map: (
+    small: px-to-rem(20px),
+    medium: px-to-rem(30px),
+    large: px-to-rem(70px),
+);
+
+@function font-size($_key) {
+    @return map-get($font-size-map, $_key);
+}
