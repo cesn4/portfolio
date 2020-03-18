@@ -11,18 +11,21 @@
         visibility: visible;
     }
 
-    &__list-box {
+    &__box {
         color: theme-color(active);
+        display: flex;
+        flex-direction: column;
         font-size: font-size(small);
     }
 
     &__label {
         font-family: $font-family-primary;
         font-size: font-size(medium);
+        margin-bottom: 10px;
     }
 
     &__text {
         font-family: $font-family-secondary;
-        line-height: 2;
+        line-height: 1.8;
     }
 }
