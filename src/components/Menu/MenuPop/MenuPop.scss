@@ -25,7 +25,31 @@
     }
 
     &__text {
-        font-family: $font-family-secondary;
+        font-family: $font-family-primary;
         line-height: 1.8;
+    }
+
+    &__list-box {
+        color: theme-color(active);
+        display: flex;
+        flex-direction: column;
+        font-family: $font-family-primary;
+        font-size: font-size(small);
+    }
+
+    &__list-title {
+        color: theme-color(inactive);
+
+    }
+
+    &__command {
+        background-color: transparent;
+        border: none;
+        color: theme-color(active);
+        display: flex;
+        font-family: $font-family-primary;
+        font-size: font-size(small);
+        line-height: 1.8;
+        text-decoration: none;
     }
 }

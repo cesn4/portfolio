@@ -1,8 +1,13 @@
 import React, { FunctionComponent, useState, Fragment } from 'react';
-import MenuLauncher from './MenuLauncher';
-import MenuPop from './MenuPop';
 
-const Menu: FunctionComponent<MenuProps> = ({ label, text }: MenuProps) => {
+import MenuLauncher from './MenuLauncher';
+import MenuPop, { MenuListContent } from './MenuPop';
+
+const Menu: FunctionComponent<MenuProps> = ({
+    label,
+    text,
+    menuListContent,
+}: MenuProps) => {
     const [menuState, setMenuState] = useState(false);
 
     const menuStateToggle: VoidFunction = () => {
@@ -15,7 +20,12 @@ const Menu: FunctionComponent<MenuProps> = ({ label, text }: MenuProps) => {
                 active={menuState}
                 label={label}
             />
-            <MenuPop label={label} visible={menuState} text={text} />
+            <MenuPop
+                label={label}
+                visible={menuState}
+                text={text}
+                menuListContent={menuListContent}
+            />
         </Fragment>
     );
 };
@@ -23,6 +33,7 @@ const Menu: FunctionComponent<MenuProps> = ({ label, text }: MenuProps) => {
 interface MenuProps {
     label: string;
     text?: string | boolean;
+    menuListContent?: Array<MenuListContent>;
 }
 
 export default Menu;
