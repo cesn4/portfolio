@@ -1,8 +1,10 @@
 import React, { FunctionComponent } from 'react';
 
-import './Status.scss';
+import './StatusBar.scss';
 
-const Status: FunctionComponent<StatusProps> = ({ state }: StatusProps) => {
+const StatusBar: FunctionComponent<StatusBarProps> = ({
+    state,
+}: StatusBarProps) => {
     const className = 'status-bar';
     const renderStatus: Function = (aiState: boolean) => {
         if (aiState) {
@@ -22,8 +24,8 @@ const Status: FunctionComponent<StatusProps> = ({ state }: StatusProps) => {
     );
 };
 
-interface StatusProps {
+interface StatusBarProps {
     state?: boolean;
 }
 
-export default Status;
+export default StatusBar;

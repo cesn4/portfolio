@@ -1,12 +1,12 @@
 import React, { FunctionComponent } from 'react';
 
-import Status from '~/components/Status';
+import StatusBar from '~/components/StatusBar';
 
 const Navigation: FunctionComponent = () => {
     const className = 'navigation';
     return (
         <div className={className}>
-            <Status />
+            <StatusBar />
         </div>
     );
 };
