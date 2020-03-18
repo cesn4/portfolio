@@ -1,0 +1,7 @@
+.status-bar {
+    color: theme-color(active);
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family-primary;
+    font-size: font-size(medium);
+}
