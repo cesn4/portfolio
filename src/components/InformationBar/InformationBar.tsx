@@ -19,10 +19,10 @@ const InformationBar: FunctionComponent = () => {
             title: 'Portfolio',
             command: 'Tell me about your experiances.',
             command2: 'Show me your works.',
-            command3: 'What kind of skills do you posses',
+            command3: 'What kind of skills do you posses?',
         },
         { title: 'Games', command: 'How about match of chess?' },
-        { title: 'Contact', command: 'I would like to contact your creator' },
+        { title: 'Contact', command: 'I would like to contact your creator.' },
     ];
     console.log(menuList);
     return (

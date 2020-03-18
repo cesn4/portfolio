@@ -39,17 +39,19 @@
 
     &__list-title {
         color: theme-color(inactive);
-
     }
 
     &__command {
         background-color: transparent;
         border: none;
         color: theme-color(active);
-        display: flex;
         font-family: $font-family-primary;
         font-size: font-size(small);
         line-height: 1.8;
+        text-align: left;
         text-decoration: none;
+        &:hover {
+            background-color: darken(theme-color(inactive), 30%);
+        }
     }
 }
