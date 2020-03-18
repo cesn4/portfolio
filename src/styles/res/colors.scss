@@ -11,7 +11,7 @@ $theme-colors: (
     inactive: $color-dark-gray,
     positive: $color-de-york,
     negative: $color-cinnabar,
-    black: $color-black,
+    dark: $color-black,
 );
 
 @function theme-color($_key) {

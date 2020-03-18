@@ -1,0 +1,28 @@
+.menu-pop {
+    background-color: theme-color(dark);
+    height: 600px;
+    padding: 20px;
+    position: absolute;
+    top: 200px;
+    visibility: hidden;
+    width: 300px;
+
+    &.-visible {
+        visibility: visible;
+    }
+
+    &__list-box {
+        color: theme-color(active);
+        font-size: font-size(small);
+    }
+
+    &__label {
+        font-family: $font-family-primary;
+        font-size: font-size(medium);
+    }
+
+    &__text {
+        font-family: $font-family-secondary;
+        line-height: 2;
+    }
+}
