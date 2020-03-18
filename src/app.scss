@@ -1,0 +1,20 @@
+.answer {
+    color: theme-color(active);
+    display: flex;
+    font-size: 70px;
+    height: 200px;
+}
+
+.terminal {
+    position: relative;
+
+    &__title {
+        color: theme-color(active);
+        font-family: $font-family-secondary;
+        left: 20px;
+        position: absolute;
+        text-transform: uppercase;
+        top: 20px;
+        z-index: 1;
+    }
+}
