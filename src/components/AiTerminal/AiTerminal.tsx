@@ -1,6 +1,8 @@
 import React, { FunctionComponent, Fragment } from 'react';
 import Terminal from 'terminal-in-react';
 
+import { SetAiCommand } from '~/store/actions';
+
 const aiTerminal: FunctionComponent = () => {
     return (
         <Fragment>
@@ -18,10 +20,10 @@ const aiTerminal: FunctionComponent = () => {
                 showActions={false}
                 commands={{
                     gm: (): void => {
-                        console.log('Good morning');
+                        SetAiCommand('Good morning');
                     },
                     hu: (): void => {
-                        console.log('Who are you?');
+                        SetAiCommand('Who are you?');
                     },
                 }}
             />
