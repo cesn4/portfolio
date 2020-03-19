@@ -17,9 +17,9 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
     return <div className={className}>{aiCall(command)}</div>;
 };
 
-type commandType = 'Good morning' | 'Who are you?';
+type commandType = 'Good morning' | 'Who are you?' | '';
 
-interface AIProps {
+export interface AIProps {
     command: commandType;
 }
 

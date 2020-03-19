@@ -1,1 +1,1 @@
-export { default } from './AI';
+export { default, AIProps } from './AI';
