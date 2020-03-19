@@ -3,9 +3,11 @@
     height: 600px;
     padding: 20px;
     position: absolute;
+    right: 500px;
     top: 200px;
     visibility: hidden;
     width: 300px;
+    z-index: 60;
 
     &.-visible {
         visibility: visible;

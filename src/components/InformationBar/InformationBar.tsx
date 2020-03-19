@@ -13,7 +13,7 @@ const InformationBar: FunctionComponent = () => {
             title: 'Existential',
             command: 'Who are you?',
             command2: 'Why do you exist?',
-            command3: 'Why do you exist?',
+            command3: 'Who created you?',
         },
         {
             title: 'Portfolio',
