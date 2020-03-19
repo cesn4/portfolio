@@ -1,6 +1,9 @@
 import React, { FunctionComponent, ReactChild, Fragment } from 'react';
 import classNames from 'classnames';
 
+import { SetAiCommand } from '~/store/actions';
+import { AiCommandTypes } from '~/store/types/commandTypes';
+
 import './MenuPop.scss';
 
 const MenuPop: FunctionComponent<MenuPopProps> = ({
@@ -29,16 +32,25 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
             return (
                 <Fragment key={index.toString()}>
                     <span className={`${className}__list-title`}>{title}</span>
-                    <button className={`${className}__command`}>
+                    <button
+                        className={`${className}__command`}
+                        onClick={(): void => SetAiCommand(command)}
+                    >
                         {command}
                     </button>
                     {!!command2 && (
-                        <button className={`${className}__command`}>
+                        <button
+                            className={`${className}__command`}
+                            onClick={(): void => SetAiCommand(command)}
+                        >
                             {command2}
                         </button>
                     )}
                     {!!command3 && (
-                        <button className={`${className}__command`}>
+                        <button
+                            className={`${className}__command`}
+                            onClick={(): void => SetAiCommand(command)}
+                        >
                             {command3}
                         </button>
                     )}
@@ -70,9 +82,9 @@ interface MenuPopProps {
 
 export interface MenuListContent {
     title: string;
-    command: string;
-    command2?: string;
-    command3?: string;
+    command: AiCommandTypes;
+    command2?: AiCommandTypes;
+    command3?: AiCommandTypes;
 }
 
 export default MenuPop;
