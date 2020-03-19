@@ -1,0 +1,10 @@
+.navigation {
+    align-items: flex-end;
+    display: flex;
+    justify-content: flex-end;
+
+    &__information-bar {
+        height: 100%;
+        width: 100%;
+    }
+}

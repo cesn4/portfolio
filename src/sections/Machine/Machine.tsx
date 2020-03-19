@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { connect } from 'react-redux';
+import { Container, Row, Col } from 'react-grid-system';
 
 import AiTerminal from '~/components/AiTerminal';
 import AI, { AIProps } from '~/components/AI/AI';
@@ -11,8 +12,16 @@ const Machine: FunctionComponent<AIProps> = ({ command }: AIProps) => {
     const className = 'machine';
     return (
         <div className={className}>
-            <AI command={command} />
-            <AiTerminal />
+            <Container>
+                <Row>
+                    <Col sm={12}>
+                        <AI command={command} />
+                    </Col>
+                    <Col sm={12}>
+                        <AiTerminal />
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };
