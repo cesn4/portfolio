@@ -1,5 +1,17 @@
 .main {
     display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
+
+    &__ai-term-box {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__ai {
+        margin-top: 6%;
+    }
 }

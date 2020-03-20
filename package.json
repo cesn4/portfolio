@@ -64,6 +64,7 @@
     "@types/react-redux": "^7.1.7",
     "classnames": "^2.2.6",
     "react": "^16.13.0",
+    "react-console-emulator": "^3.0.5",
     "react-dom": "^16.13.0",
     "react-grid-system": "^6.3.0",
     "react-redux": "^7.2.0",

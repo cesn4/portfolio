@@ -2,5 +2,8 @@
     align-items: flex-end;
     display: flex;
     flex-direction: column;
-    justify-content: end;
+
+    @include if-tablet {
+        align-items: flex-start;
+    }
 }
