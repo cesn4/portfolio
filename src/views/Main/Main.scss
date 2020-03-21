@@ -1,12 +1,23 @@
 .main {
     position:fixed;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 5px 10px 10px 10px;
-    width: 100vw;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        padding: 5px 10px 10px 10px;
+        width: 100vw;
+    }
 
     &__navigation {
-        margin-bottom: 70px;
+        display: flex;
+        height: 30vh;
+    }
+
+    &__machine {
+        display: flex;
+        flex-direction: column;
+        height: 68vh;
+        width: 100vw;
     }
 }
