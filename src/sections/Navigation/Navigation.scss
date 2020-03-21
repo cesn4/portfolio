@@ -1,0 +1,14 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__information-box {
+        display: flex;
+        margin-left: auto;
+
+        @include if-desktop {
+            margin-left: 0;
+        }
+    }
+}

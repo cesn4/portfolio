@@ -14,9 +14,18 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     menuListContent,
 }: MenuPopProps) => {
     const className = 'menu-pop';
+    let defaultPositionText = { x: 0, y: 0 };
+    if (window.innerWidth >= 1200) {
+        defaultPositionText = { x: 550, y: -50 };
+    }
+    let defaultPositionList = { x: 0, y: 0 };
+    if (window.innerWidth >= 1200) {
+        defaultPositionList = { x: 900, y: 50 };
+    }
+    console.log(defaultPositionText);
     if (menuListContent === undefined) {
         return (
-            <Draggable defaultPosition={{ x: 550, y: -50 }}>
+            <Draggable defaultPosition={defaultPositionText}>
                 <div
                     className={classNames(`${className}`, {
                         '-visible': visible,
@@ -62,7 +71,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
         }
     );
     return (
-        <Draggable defaultPosition={{ x: 900, y: 50 }}>
+        <Draggable defaultPosition={defaultPositionList}>
             <div
                 className={classNames(`${className}`, {
                     '-visible': visible,

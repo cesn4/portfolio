@@ -13,6 +13,7 @@ const Menu: FunctionComponent<MenuProps> = ({
     const menuStateToggle: VoidFunction = () => {
         setMenuState(!menuState);
     };
+    console.log(window.innerWidth);
     return (
         <Fragment>
             <MenuLauncher
