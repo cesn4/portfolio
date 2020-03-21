@@ -9,3 +9,5 @@ export type AiCommandTypes =
     | 'How about match of chess?'
     | 'I would like to contact your creator.'
     | '';
+
+export type AiStateType = true | false;

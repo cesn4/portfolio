@@ -9,7 +9,7 @@ const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
     const aiCall: Function = (command: AiCommandTypes) => {
         switch (command) {
             case 'Good morning':
-                return 'Hello there, how can I help yours?';
+                return 'Hello there, how can I help you?';
             case 'Who are you?':
                 return 'Why do you care?';
             default:
