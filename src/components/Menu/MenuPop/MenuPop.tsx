@@ -16,7 +16,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     const className = 'menu-pop';
     if (menuListContent === undefined) {
         return (
-            <Draggable>
+            <Draggable defaultPosition={{ x: 550, y: -50 }}>
                 <div
                     className={classNames(`${className}`, {
                         '-visible': visible,
@@ -62,13 +62,13 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
         }
     );
     return (
-        <Draggable>
+        <Draggable defaultPosition={{ x: 900, y: 50 }}>
             <div
                 className={classNames(`${className}`, {
                     '-visible': visible,
                 })}
             >
-                <div>
+                <div className={`${className}__box`}>
                     <span className={`${className}__label`}>{label}</span>
                     {text && <p className={`${className}__text`}>{text}</p>}
                     <div className={`${className}__list-box`}>

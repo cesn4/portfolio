@@ -1,6 +1,6 @@
 .menu-pop {
     background-color: theme-color(dark);
-    height: 500px;
+    height: 550px;
     padding: 20px;
     position: absolute;
     top: 100px;
@@ -23,6 +23,8 @@
         font-family: $font-family-primary;
         font-size: font-size(medium);
         margin-bottom: 10px;
+        color: theme-color(active);
+        margin-bottom: 20px;
     }
 
     &__text {
