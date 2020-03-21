@@ -28,7 +28,7 @@ const StatusBar: FunctionComponent<StatusBarProps> = ({
         <div className={className}>
             <span className={`${className}__id`}>ID: mc94 portfolio AI</span>
             <span className={`${className}__status`}>
-                Status: {renderStatus(true)}
+                Status: {renderStatus(state)}
             </span>
         </div>
     );
