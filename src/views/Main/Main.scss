@@ -1,5 +1,22 @@
 .main {
-    display: flex;
     height: 100vh;
+    padding: 5px 10px 10px 10px;
+    position: fixed;
     width: 100vw;
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__navigation {
+        display: flex;
+        height: 30vh;
+    }
+
+    &__machine {
+        display: flex;
+        flex-direction: column;
+        height: 68vh;
+    }
 }

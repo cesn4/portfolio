@@ -1,6 +1,13 @@
 .ai {
+    align-items: center;
     color: theme-color(active);
     display: flex;
     font-family: $font-family-primary;
-    font-size: font-size(large);
+    font-size: font-size(medium);
+    justify-content: center;
+    text-align: center;
+
+    @include if-tablet {
+        font-size: font-size(large)
+    }
 }

@@ -1,10 +1,9 @@
 .menu-pop {
     background-color: theme-color(dark);
-    height: 600px;
+    height: 550px;
     padding: 20px;
     position: absolute;
-    right: 500px;
-    top: 200px;
+    top: 100px;
     visibility: hidden;
     width: 300px;
     z-index: 60;
@@ -21,9 +20,11 @@
     }
 
     &__label {
+        color: theme-color(active);
         font-family: $font-family-primary;
         font-size: font-size(medium);
         margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     &__text {

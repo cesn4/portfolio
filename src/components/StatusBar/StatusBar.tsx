@@ -6,11 +6,21 @@ const StatusBar: FunctionComponent<StatusBarProps> = ({
     state,
 }: StatusBarProps) => {
     const className = 'status-bar';
+    const availableText = 'Available ';
     const renderStatus: Function = (aiState: boolean) => {
         if (aiState) {
-            return 'Available for Work';
+            return (
+                <span className={`${className}__online-state`}>
+                    <span className={`${className}__online-state-available`}>
+                        {availableText}
+                    </span>
+                    for Work
+                </span>
+            );
         } else {
-            return 'Offline';
+            return (
+                <span className={`${className}__offline-state`}>Offline</span>
+            );
         }
     };
     console.log(renderStatus(state));
