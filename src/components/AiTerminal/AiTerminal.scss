@@ -1,4 +1,18 @@
 .ai-terminal {
     display: flex;
     justify-content: center;
+
+    &__box {
+        max-height: 200px !important;
+        min-height: 200px !important;
+        min-width: 100% !important;
+
+        @include if-tablet {
+            min-width: 80% !important;
+        }
+
+        @include if-desktop {
+            min-width: 60% !important;
+        }
+    }
 }

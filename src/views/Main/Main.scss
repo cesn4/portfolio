@@ -2,16 +2,10 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    padding: 5px 10px 10px 10px;
     width: 100vw;
 
-    &__ai-term-box {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    &__ai {
-        margin-top: 6%;
+    &__navigation {
+        margin-bottom: 70px;
     }
 }

@@ -1,5 +1,6 @@
 import React, { FunctionComponent, ReactChild, Fragment } from 'react';
 import classNames from 'classnames';
+import Draggable from 'react-draggable';
 
 import { SetAiCommand } from '~/store/actions';
 import { AiCommandTypes } from '~/store/types/commandTypes';
@@ -15,16 +16,18 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     const className = 'menu-pop';
     if (menuListContent === undefined) {
         return (
-            <div
-                className={classNames(`${className}`, {
-                    '-visible': visible,
-                })}
-            >
-                <div className={`${className}__box`}>
-                    <span className={`${className}__label`}>{label}</span>
-                    {text && <p className={`${className}__text`}>{text}</p>}
+            <Draggable>
+                <div
+                    className={classNames(`${className}`, {
+                        '-visible': visible,
+                    })}
+                >
+                    <div className={`${className}__box`}>
+                        <span className={`${className}__label`}>{label}</span>
+                        {text && <p className={`${className}__text`}>{text}</p>}
+                    </div>
                 </div>
-            </div>
+            </Draggable>
         );
     }
     const renderMenuList: Array<ReactChild> = menuListContent.map(
@@ -59,17 +62,21 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
         }
     );
     return (
-        <div
-            className={classNames(`${className}`, {
-                '-visible': visible,
-            })}
-        >
-            <div className={`${className}__box`}>
-                <span className={`${className}__label`}>{label}</span>
-                {text && <p className={`${className}__text`}>{text}</p>}
-                <div className={`${className}__list-box`}>{renderMenuList}</div>
+        <Draggable>
+            <div
+                className={classNames(`${className}`, {
+                    '-visible': visible,
+                })}
+            >
+                <div>
+                    <span className={`${className}__label`}>{label}</span>
+                    {text && <p className={`${className}__text`}>{text}</p>}
+                    <div className={`${className}__list-box`}>
+                        {renderMenuList}
+                    </div>
+                </div>
             </div>
-        </div>
+        </Draggable>
     );
 };
 

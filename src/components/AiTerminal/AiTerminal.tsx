@@ -9,9 +9,7 @@ const aiTerminal: FunctionComponent = () => {
     const className = 'ai-terminal';
     return (
         <div className={`${className}`}>
-            <Terminal
-                style={{ minHeight: '170px', maxHeight: '170px', width: '50%' }}
-            />
+            <Terminal className={`${className}__box`} />
         </div>
     );
 };

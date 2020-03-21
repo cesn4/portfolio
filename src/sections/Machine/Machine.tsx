@@ -11,12 +11,8 @@ const Machine: FunctionComponent<AIProps> = ({ command }: AIProps) => {
     const className = 'machine';
     return (
         <div className={className}>
-            <div className={`${className}__ai`}>
-                <AI command={command} />
-            </div>
-            <div className={`${className}__terminal`}>
-                <AiTerminal />
-            </div>
+            <AI command={command} />
+            <AiTerminal />
         </div>
     );
 };
