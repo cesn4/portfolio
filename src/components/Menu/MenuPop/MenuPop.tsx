@@ -53,7 +53,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
                     {!!command2 && (
                         <button
                             className={`${className}__command`}
-                            onClick={(): void => SetAiCommand(command)}
+                            onClick={(): void => SetAiCommand(command2)}
                         >
                             {command2}
                         </button>
@@ -61,7 +61,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
                     {!!command3 && (
                         <button
                             className={`${className}__command`}
-                            onClick={(): void => SetAiCommand(command)}
+                            onClick={(): void => SetAiCommand(command3)}
                         >
                             {command3}
                         </button>

@@ -9,7 +9,7 @@ $font-family-secondary: 'SimSun-ExtB';
 $font-size-map: (
     small: px-to-rem(20px),
     medium: px-to-rem(30px),
-    large: px-to-rem(70px),
+    large: px-to-rem(50px),
 );
 
 @function font-size($_key) {
