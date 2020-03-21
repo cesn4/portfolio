@@ -8,4 +8,12 @@
     @include if-tablet {
         font-size: font-size(medium);
     }
+
+    &__online-state-available {
+        color: theme-color(positive);
+    }
+
+    &__offline-state {
+        color: theme-color(negative);
+    }
 }
