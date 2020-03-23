@@ -13,10 +13,25 @@
     }
 
     &__box {
-        color: theme-color(active);
+        color: theme-color(inactive);
         display: flex;
         flex-direction: column;
+        font-family: $font-family-primary;
         font-size: font-size(small);
+    }
+
+    &__text {
+        line-height: 1.8;
+    }
+
+    &__text-2 {
+        line-height: 1.8;
+    }
+
+    &__text-command {
+        color: theme-color(active);
+        line-height: 1.8;
+        padding: 20px 0;
     }
 
     &__label {
@@ -25,11 +40,6 @@
         font-size: font-size(medium);
         margin-bottom: 10px;
         margin-bottom: 20px;
-    }
-
-    &__text {
-        font-family: $font-family-primary;
-        line-height: 1.8;
     }
 
     &__list-box {

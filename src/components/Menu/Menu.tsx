@@ -7,6 +7,8 @@ const Menu: FunctionComponent<MenuProps> = ({
     label,
     text,
     menuListContent,
+    commands,
+    text2,
 }: MenuProps) => {
     const [menuState, setMenuState] = useState(false);
 
@@ -26,6 +28,8 @@ const Menu: FunctionComponent<MenuProps> = ({
                 visible={menuState}
                 text={text}
                 menuListContent={menuListContent}
+                commands={commands}
+                text2={text2}
             />
         </Fragment>
     );
@@ -35,6 +39,8 @@ interface MenuProps {
     label: string;
     text?: string | boolean;
     menuListContent?: Array<MenuListContent>;
+    commands?: string;
+    text2?: string;
 }
 
 export default Menu;

@@ -29,7 +29,13 @@ const InformationBar: FunctionComponent = () => {
         <div className={className}>
             <Menu
                 label="DOCUMENTATION"
-                text="AI created to represent experiences, skill, works and mind it's self of Mindaugas Cesna. To launch the AI enter into the terminal: mc49 run build. Possible commands of IA you can find in commands section. To enter into lazy mode press button at the corner of terminal."
+                text={
+                    "AI created to represent experiences, skills, works and mind it's self of Mindaugas Cesna. To launch the AI enter into the terminal:"
+                }
+                commands={'mc49 run build'}
+                text2={
+                    'Possible commands of AI you can be found in commands section and be use by pressing them or passed into the terrminal'
+                }
             />
             <Menu label="COMMANDS" menuListContent={menuList} />
         </div>

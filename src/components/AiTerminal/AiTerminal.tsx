@@ -286,6 +286,9 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
     return (
         <div className={`${className}`}>
             <Terminal
+                welcomeMessage={
+                    'Welcome to the mc49 portfolio AI, for more information and how to start an app read DOCUMENTATION.'
+                }
                 className={`${className}__box`}
                 commands={commands}
                 errorText={errorText}
