@@ -7,7 +7,7 @@ import './AI.scss';
 
 const AI: FunctionComponent<AIProps> = ({ command }: AIProps) => {
     const className = 'ai';
-
+    console.log(command);
     const aiCall: Function = (command: AiCommandTypes) => {
         switch (command) {
             case 'Good morning':

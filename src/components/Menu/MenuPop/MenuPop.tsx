@@ -1,9 +1,11 @@
 import React, { FunctionComponent, ReactChild, Fragment } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
+import { connect } from 'react-redux';
 
 import { SetAiCommand } from '~/store/actions';
 import { AiCommandTypes } from '~/store/types/commandTypes';
+import { ApplicationState } from '~/store/types/applicationState';
 
 import './MenuPop.scss';
 
@@ -12,8 +14,10 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     text,
     visible = false,
     menuListContent,
+    aiLazyState,
 }: MenuPopProps) => {
     const className = 'menu-pop';
+    console.log(aiLazyState);
 
     let defaultPositionText = { x: 0, y: 0 };
     if (window.innerWidth >= 1200) {
@@ -22,10 +26,6 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     let defaultPositionList = { x: 0, y: 0 };
     if (window.innerWidth >= 1200) {
         defaultPositionList = { x: 900, y: 50 };
-    }
-
-    const lazyModePass: void = () => {
-        if 
     }
 
     if (menuListContent === undefined) {
@@ -46,19 +46,26 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     }
     const renderMenuList: Array<ReactChild> = menuListContent.map(
         ({ title, command, command2, command3 }: MenuListContent, index) => {
+            const lazyModeCheck = (com: AiCommandTypes) => {
+                if (aiLazyState === false) {
+                    return SetAiCommand('Lazy error');
+                } else {
+                    return SetAiCommand(com);
+                }
+            };
             return (
                 <Fragment key={index.toString()}>
                     <span className={`${className}__list-title`}>{title}</span>
                     <button
                         className={`${className}__command`}
-                        onClick={(): void => SetAiCommand(command)}
+                        onClick={(): void => lazyModeCheck(command)}
                     >
                         {command}
                     </button>
                     {!!command2 && (
                         <button
                             className={`${className}__command`}
-                            onClick={(): void => SetAiCommand(command2)}
+                            onClick={(): void => lazyModeCheck(command2)}
                         >
                             {command2}
                         </button>
@@ -66,7 +73,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
                     {!!command3 && (
                         <button
                             className={`${className}__command`}
-                            onClick={(): void => SetAiCommand(command3)}
+                            onClick={(): void => lazyModeCheck(command3)}
                         >
                             {command3}
                         </button>
@@ -99,6 +106,7 @@ interface MenuPopProps {
     label: string;
     text?: string | boolean;
     menuListContent?: Array<MenuListContent> | undefined;
+    aiLazyState: boolean;
 }
 
 export interface MenuListContent {
@@ -108,4 +116,14 @@ export interface MenuListContent {
     command3?: AiCommandTypes;
 }
 
-export default MenuPop;
+const mapStateToProps = (state: ApplicationState): AiLazyState => {
+    return {
+        aiLazyState: state.aiLazy,
+    };
+};
+
+interface AiLazyState {
+    aiLazyState: true | false;
+}
+
+export default connect(mapStateToProps)(MenuPop);
