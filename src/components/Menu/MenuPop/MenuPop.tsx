@@ -8,6 +8,7 @@ import { AiCommandTypes, AiStateType } from '~/store/types/commandTypes';
 
 import './MenuPop.scss';
 import { ApplicationState } from '~/store/types/applicationState';
+import Icon from '~/components/Icons';
 
 const MenuPop: FunctionComponent<MenuPopProps> = ({
     label,
@@ -17,6 +18,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     aiState,
     commands,
     text2,
+    onClick,
 }: MenuPopProps) => {
     const className = 'menu-pop';
 
@@ -39,7 +41,17 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
                     })}
                 >
                     <div className={`${className}__box`}>
-                        <span className={`${className}__label`}>{label}</span>
+                        <div className={`${className}__label-box`}>
+                            <span className={`${className}__label`}>
+                                {label}
+                            </span>
+                            <button
+                                onClick={onClick}
+                                className={`${className}__button`}
+                            >
+                                <Icon name={'close'} size={32} />
+                            </button>
+                        </div>
                         {text && <p className={`${className}__text`}>{text}</p>}
                         <span className={`${className}__text-command`}>
                             {commands}
@@ -96,7 +108,15 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
                 })}
             >
                 <div className={`${className}__box`}>
-                    <span className={`${className}__label`}>{label}</span>
+                    <div className={`${className}__label-box`}>
+                        <span className={`${className}__label`}>{label}</span>
+                        <button
+                            onClick={onClick}
+                            className={`${className}__button`}
+                        >
+                            <Icon name={'close'} size={32} />
+                        </button>
+                    </div>
                     {text && <p className={`${className}__text`}>{text}</p>}
                     <div className={`${className}__list-box`}>
                         {renderMenuList}
@@ -115,6 +135,7 @@ interface MenuPopProps {
     aiState: AiStateType;
     commands?: string;
     text2?: string;
+    onClick: VoidFunction;
 }
 
 export interface MenuListContent {
