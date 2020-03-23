@@ -9,6 +9,12 @@
         font-size: font-size(medium);
     }
 
+    &__id-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
     &__online-state-available {
         color: theme-color(positive);
     }

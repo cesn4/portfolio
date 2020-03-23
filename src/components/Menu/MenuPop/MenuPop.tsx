@@ -14,6 +14,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     menuListContent,
 }: MenuPopProps) => {
     const className = 'menu-pop';
+
     let defaultPositionText = { x: 0, y: 0 };
     if (window.innerWidth >= 1200) {
         defaultPositionText = { x: 550, y: -50 };
@@ -22,7 +23,11 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     if (window.innerWidth >= 1200) {
         defaultPositionList = { x: 900, y: 50 };
     }
-    console.log(defaultPositionText);
+
+    const lazyModePass: void = () => {
+        if 
+    }
+
     if (menuListContent === undefined) {
         return (
             <Draggable defaultPosition={defaultPositionText}>
