@@ -12,11 +12,19 @@
     &__navigation {
         display: flex;
         height: 30vh;
+
+        @include if-desktop {
+            height: 23vh;
+        }
     }
 
     &__machine {
         display: flex;
         flex-direction: column;
         height: 68vh;
+
+        @include if-desktop {
+            height: 75vh;
+        }
     }
 }

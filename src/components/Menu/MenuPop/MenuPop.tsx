@@ -1,19 +1,26 @@
 import React, { FunctionComponent, ReactChild, Fragment } from 'react';
 import classNames from 'classnames';
 import Draggable from 'react-draggable';
+import { connect } from 'react-redux';
 
 import { SetAiCommand } from '~/store/actions';
-import { AiCommandTypes } from '~/store/types/commandTypes';
+import { AiCommandTypes, AiStateType } from '~/store/types/commandTypes';
 
 import './MenuPop.scss';
+import { ApplicationState } from '~/store/types/applicationState';
 
 const MenuPop: FunctionComponent<MenuPopProps> = ({
     label,
     text,
     visible = false,
     menuListContent,
+    aiState,
+    commands,
+    text2,
 }: MenuPopProps) => {
     const className = 'menu-pop';
+
+    console.log(aiState);
     let defaultPositionText = { x: 0, y: 0 };
     if (window.innerWidth >= 1200) {
         defaultPositionText = { x: 550, y: -50 };
@@ -34,6 +41,10 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
                     <div className={`${className}__box`}>
                         <span className={`${className}__label`}>{label}</span>
                         {text && <p className={`${className}__text`}>{text}</p>}
+                        <span className={`${className}__text-command`}>
+                            {commands}
+                        </span>
+                        <span className={`${className}__text-2`}>{text2}</span>
                     </div>
                 </div>
             </Draggable>
@@ -41,19 +52,26 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
     }
     const renderMenuList: Array<ReactChild> = menuListContent.map(
         ({ title, command, command2, command3 }: MenuListContent, index) => {
+            const clickHandler: void | Function = (arg: AiCommandTypes) => {
+                if (aiState) {
+                    SetAiCommand(arg);
+                } else {
+                    alert('AI must be turned on before passing commands.');
+                }
+            };
             return (
                 <Fragment key={index.toString()}>
                     <span className={`${className}__list-title`}>{title}</span>
                     <button
                         className={`${className}__command`}
-                        onClick={(): void => SetAiCommand(command)}
+                        onClick={(): void => clickHandler(command)}
                     >
                         {command}
                     </button>
                     {!!command2 && (
                         <button
                             className={`${className}__command`}
-                            onClick={(): void => SetAiCommand(command)}
+                            onClick={(): void => clickHandler(command2)}
                         >
                             {command2}
                         </button>
@@ -61,7 +79,7 @@ const MenuPop: FunctionComponent<MenuPopProps> = ({
                     {!!command3 && (
                         <button
                             className={`${className}__command`}
-                            onClick={(): void => SetAiCommand(command)}
+                            onClick={(): void => clickHandler(command3)}
                         >
                             {command3}
                         </button>
@@ -94,6 +112,9 @@ interface MenuPopProps {
     label: string;
     text?: string | boolean;
     menuListContent?: Array<MenuListContent> | undefined;
+    aiState: AiStateType;
+    commands?: string;
+    text2?: string;
 }
 
 export interface MenuListContent {
@@ -103,4 +124,14 @@ export interface MenuListContent {
     command3?: AiCommandTypes;
 }
 
-export default MenuPop;
+const mapStateToProps = (state: ApplicationState): AiStateProp => {
+    return {
+        aiState: state.aiState,
+    };
+};
+
+interface AiStateProp {
+    aiState: AiStateType;
+}
+
+export default connect(mapStateToProps)(MenuPop);
