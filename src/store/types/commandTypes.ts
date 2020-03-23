@@ -8,9 +8,6 @@ export type AiCommandTypes =
     | 'What kind of skills do you posses?'
     | 'How about match of chess?'
     | 'I would like to contact your creator.'
-    | ''
-    | 'Lazy error';
+    | '';
 
 export type AiStateType = true | false;
-
-export type AiLazyType = true | false;

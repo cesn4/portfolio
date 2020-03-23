@@ -1,4 +1,4 @@
-import { AiCommandTypes, AiStateType, AiLazyType } from './commandTypes';
+import { AiCommandTypes, AiStateType } from './commandTypes';
 
 export interface SetAiCommand {
     type: 'SetAiCommand';
@@ -10,9 +10,4 @@ export interface SetAiType {
     payload: AiStateType;
 }
 
-export interface SetAiLazy {
-    type: 'SetAiLazy';
-    payload: AiLazyType;
-}
-
-export type Actions = SetAiCommand | SetAiType | SetAiLazy;
+export type Actions = SetAiCommand | SetAiType;

@@ -4,7 +4,6 @@ import { Actions } from './types/ActionTypes';
 const initialState: ApplicationState = {
     aiCommand: '',
     aiState: false,
-    aiLazy: false,
 };
 const reducer = (state = initialState, action: Actions): ApplicationState => {
     switch (action.type) {
@@ -18,12 +17,6 @@ const reducer = (state = initialState, action: Actions): ApplicationState => {
             return {
                 ...state,
                 aiState: action.payload,
-            };
-        }
-        case 'SetAiLazy': {
-            return {
-                ...state,
-                aiLazy: action.payload,
             };
         }
         default: {

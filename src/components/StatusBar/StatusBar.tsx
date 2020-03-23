@@ -1,10 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { connect } from 'react-redux';
 
-import { ApplicationState } from '~/store/types/applicationState';
-import SwitchButton from '~/components/SwitchButton';
-
 import './StatusBar.scss';
+import { ApplicationState } from '~/store/types/applicationState';
 
 const StatusBar: FunctionComponent<StatusBarProps> = ({
     aiState,
@@ -30,12 +28,7 @@ const StatusBar: FunctionComponent<StatusBarProps> = ({
     };
     return (
         <div className={className}>
-            <div className={`${className}__id-box`}>
-                <span className={`${className}__id`}>
-                    ID: mc94 portfolio AI
-                </span>
-                <SwitchButton />
-            </div>
+            <span className={`${className}__id`}>ID: mc94 portfolio AI</span>
             <span className={`${className}__status`}>
                 Status: {renderStatus(aiState)}
             </span>
