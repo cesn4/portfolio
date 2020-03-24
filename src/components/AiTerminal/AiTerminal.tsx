@@ -14,12 +14,52 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
     if (aiState) {
         errorText = 'Command not found';
     }
+    const terminal: unknown = React.createRef();
+
     const commands = {
         mc49: {
             fn: (arg1: string, arg2: string | false): void | string => {
                 if (arg1 === 'run' && arg2 === 'build') {
-                    SetAiState(true);
-                    SetAiCommand('Good morning');
+                    setTimeout(() => SetAiState(true), 2800);
+                    setTimeout(() => SetAiCommand('Good morning'), 4000);
+                    const terminalRef = terminal.current;
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                'Launching basic life imatation systems via TS React scripts.'
+                            ),
+                        500
+                    );
+                    setTimeout(
+                        () => terminalRef.pushToStdout('Sorting thoughts...'),
+                        1000
+                    );
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                <span>
+                                    ERORR!!. =??/wa56a65d.... Initializing
+                                    backup systems to support AI stabilzation...
+                                </span>
+                            ),
+                        2300
+                    );
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                <span style={{ color: '#7DCE82' }}>
+                                    Backups booted
+                                </span>
+                            ),
+                        2500
+                    );
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                'AI launch complete. Commands authorized.'
+                            ),
+                        2800
+                    );
                 } else if (arg1 === 'stop' && aiState) {
                     SetAiState(false);
                 } else {
@@ -286,10 +326,12 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
     return (
         <div className={`${className}`}>
             <Terminal
+                ref={terminal}
                 welcomeMessage={
                     'Welcome to the mc49 portfolio AI, for more information and how to start an app read DOCUMENTATION.'
                 }
                 className={`${className}__box`}
+                contentClassName={`${className}__box-content`}
                 commands={commands}
                 errorText={errorText}
             />
