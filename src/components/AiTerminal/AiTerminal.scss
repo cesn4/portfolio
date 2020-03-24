@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     &__box {
-        max-height: 230px !important;
-        min-height: 230px !important;
+        max-height: 200px !important;
+        min-height: 200px !important;
         min-width: 100% !important;
 
         @include if-tablet {

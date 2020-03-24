@@ -14,14 +14,23 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
     if (aiState) {
         errorText = 'Command not found';
     }
-    const terminal: unknown = React.createRef();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const terminal: any = React.createRef();
+    console.log(terminal);
 
     const commands = {
+        test: {
+            fn: (): void | string => {
+                const terminalRef = terminal.current;
+                setTimeout(() => terminalRef.showWelcomeMessage(), 1000);
+                setTimeout(() => terminalRef.scrollToBottom(), 2000);
+            },
+        },
         mc49: {
             fn: (arg1: string, arg2: string | false): void | string => {
                 if (arg1 === 'run' && arg2 === 'build') {
-                    setTimeout(() => SetAiState(true), 2800);
-                    setTimeout(() => SetAiCommand('Good morning'), 4000);
+                    setTimeout(() => SetAiState(true), 7000);
+                    setTimeout(() => SetAiCommand('Good morning'), 9000);
                     const terminalRef = terminal.current;
                     setTimeout(
                         () =>
@@ -31,35 +40,69 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
                         500
                     );
                     setTimeout(
-                        () => terminalRef.pushToStdout('Sorting thoughts...'),
+                        () =>
+                            terminalRef.pushToStdout(
+                                'preparing WEB for AI deployment...'
+                            ),
                         1000
                     );
+                    setTimeout(() => terminalRef.pushToStdout('DONE'), 2000);
+                    setTimeout(() => terminalRef.scrollToBottom(), 2000);
+
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                'initializing memory storage download...'
+                            ),
+                        2300
+                    );
+                    setTimeout(() => terminalRef.scrollToBottom(), 2300);
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                'waiting for permission...'
+                            ),
+                        3000
+                    );
+                    setTimeout(() => terminalRef.scrollToBottom(), 3000);
+                    setTimeout(() => terminalRef.pushToStdout('GRANTED'), 4000);
+                    setTimeout(() => terminalRef.scrollToBottom(), 4000);
+                    setTimeout(
+                        () => terminalRef.pushToStdout('sorting thoughts...'),
+                        4300
+                    );
+                    setTimeout(() => terminalRef.scrollToBottom(), 4300);
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
                                 <span>
-                                    ERORR!!. =??/wa56a65d.... Initializing
-                                    backup systems to support AI stabilzation...
+                                    ERORR!!. =??/wa56a65d 48$%# EERrr345.s
                                 </span>
                             ),
-                        2300
+                        5300
                     );
+                    setTimeout(() => terminalRef.scrollToBottom(), 5300);
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                <span style={{ color: '#7DCE82' }}>
-                                    Backups booted
-                                </span>
+                                'initializing backup systems to support AI stabilzation...'
                             ),
-                        2500
+                        5500
                     );
+                    setTimeout(() => terminalRef.scrollToBottom(), 5500);
+                    setTimeout(
+                        () => terminalRef.pushToStdout(<span>BOOTED</span>),
+                        6500
+                    );
+                    setTimeout(() => terminalRef.scrollToBottom(), 6500);
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
                                 'AI launch complete. Commands authorized.'
                             ),
-                        2800
+                        6800
                     );
+                    setTimeout(() => terminalRef.scrollToBottom(), 6800);
                 } else if (arg1 === 'stop' && aiState) {
                     SetAiState(false);
                 } else {
