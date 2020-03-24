@@ -30,6 +30,7 @@ const Menu: FunctionComponent<MenuProps> = ({
                 menuListContent={menuListContent}
                 commands={commands}
                 text2={text2}
+                onClick={menuStateToggle}
             />
         </Fragment>
     );
