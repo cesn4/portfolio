@@ -35,24 +35,37 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                'Launching basic life imatation systems via TS React scripts.'
+                                <span style={{ color: '#A5A5A5' }}>
+                                    Launching basic life imatation systems via
+                                    TS React scripts.
+                                </span>
                             ),
                         500
                     );
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                'preparing WEB for AI deployment...'
+                                <span style={{ color: '#A5A5A5' }}>
+                                    preparing WEB for AI deployment...
+                                </span>
                             ),
                         1000
                     );
-                    setTimeout(() => terminalRef.pushToStdout('DONE'), 2000);
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                <span style={{ color: '#A5A5A5' }}>DONE</span>
+                            ),
+                        2000
+                    );
                     setTimeout(() => terminalRef.scrollToBottom(), 2000);
 
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                'initializing memory storage download...'
+                                <span style={{ color: '#A5A5A5' }}>
+                                    initializing memory storage download...
+                                </span>
                             ),
                         2300
                     );
@@ -60,22 +73,37 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                'waiting for permission...'
+                                <span style={{ color: '#A5A5A5' }}>
+                                    waiting for permission...
+                                </span>
                             ),
                         3000
                     );
                     setTimeout(() => terminalRef.scrollToBottom(), 3000);
-                    setTimeout(() => terminalRef.pushToStdout('GRANTED'), 4000);
+                    setTimeout(
+                        () =>
+                            terminalRef.pushToStdout(
+                                <span style={{ color: '#A5A5A5' }}>
+                                    GRANTED
+                                </span>
+                            ),
+                        4000
+                    );
                     setTimeout(() => terminalRef.scrollToBottom(), 4000);
                     setTimeout(
-                        () => terminalRef.pushToStdout('sorting thoughts...'),
+                        () =>
+                            terminalRef.pushToStdout(
+                                <span style={{ color: '#A5A5A5' }}>
+                                    sorting thoughts...
+                                </span>
+                            ),
                         4300
                     );
                     setTimeout(() => terminalRef.scrollToBottom(), 4300);
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                <span>
+                                <span style={{ color: '#A5A5A5' }}>
                                     ERORR!!. =??/wa56a65d 48$%# EERrr345.s
                                 </span>
                             ),
@@ -85,20 +113,31 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                'initializing backup systems to support AI stabilzation...'
+                                <span style={{ color: '#A5A5A5' }}>
+                                    initializing backup systems to support AI
+                                    stabilzation...
+                                </span>
                             ),
                         5500
                     );
                     setTimeout(() => terminalRef.scrollToBottom(), 5500);
                     setTimeout(
-                        () => terminalRef.pushToStdout(<span>BOOTED</span>),
+                        () =>
+                            terminalRef.pushToStdout(
+                                <span style={{ color: '#A5A5A5' }}>BOOTED</span>
+                            ),
                         6500
                     );
                     setTimeout(() => terminalRef.scrollToBottom(), 6500);
                     setTimeout(
                         () =>
                             terminalRef.pushToStdout(
-                                'AI launch complete. Commands authorized.'
+                                <div>
+                                    <span style={{ color: '#A5A5A5' }}>
+                                        AI launch complete.
+                                    </span>
+                                    <span> Commands authorized.</span>
+                                </div>
                             ),
                         6800
                     );
@@ -375,6 +414,7 @@ const aiTerminal: FunctionComponent<AiTerminalProps> = ({
                 }
                 className={`${className}__box`}
                 contentClassName={`${className}__box-content`}
+                inputAreaClassName={`${className}__input`}
                 commands={commands}
                 errorText={errorText}
             />
