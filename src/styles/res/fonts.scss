@@ -1,4 +1,6 @@
-$font-family-primary: 'Power Clear';
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+$font-family-primary: 'Staatliches', cursive;
 $font-family-secondary: 'SimSun-ExtB';
 
 @function px-to-rem($_size) {
